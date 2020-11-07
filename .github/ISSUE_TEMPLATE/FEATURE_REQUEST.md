@@ -20,5 +20,5 @@ about: Suggest a new feature
 
 ### How to implement:
 
-<!-- Describe your solution(if possible -->
+<!-- Describe your solution(if possible) -->
 
