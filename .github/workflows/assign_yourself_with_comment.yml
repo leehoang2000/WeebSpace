@@ -13,10 +13,17 @@ jobs:
           script: |
             const comment_content = context.payload.comment.body
 
-            if (comment_content.includes(`@I'm working on it`)
-                || comment_content.includes(`@I'm on it`)
-                || comment_content.includes(`@I will do it`)
-            ){
+            const helping_call = [
+            `@I'm working on it`,
+            `@I am working on it`,
+            `@I'm on it`,
+            `@I am on it`,
+            `@I'll do it`,
+            `@I shall do it`,
+            `@I will do it`,
+            ]
+
+            if ( helping_call.some( x => comment_content.includes(x))){
               github.issues.addAssignees({
                             issue_number: context.payload.issue.number,
                             owner: context.repo.owner,
