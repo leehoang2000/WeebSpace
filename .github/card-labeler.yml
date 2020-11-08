@@ -9,3 +9,5 @@
     - 'Status: approved'
   'Done':
     - 'done'
+  'Backlog':
+    - 'Status: maybe later'
