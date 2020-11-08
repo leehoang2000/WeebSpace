@@ -17,9 +17,9 @@ jobs:
                             repo: context.repo.owner,
                             comment_id: context.payload.comment.id
             })
-            if (x.includes(`@I'm working on it`)
-                || x.includes(`@I'm on it`)
-                || x.includes(`@I will do it`)
+            if (comment.includes(`@I'm working on it`)
+                || comment.includes(`@I'm on it`)
+                || comment.includes(`@I will do it`)
             ){
               github.issues.addAssignees({
                             issue_number: context.payload.issue.number,
