@@ -1,0 +1,11 @@
+'Core gameplay':
+  'To do':
+    - 'Status: scheduling'
+  'In progress':
+    - 'Status: in progress'
+  'Review in progress':
+    - 'Status: waiting for review'
+  'Reviewer approved':
+    - 'Status: approved'
+  'Done':
+    - 'done'

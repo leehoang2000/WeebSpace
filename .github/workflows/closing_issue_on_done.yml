@@ -1,0 +1,15 @@
+on:
+  issues:
+    types: [ labeled ]
+
+jobs:
+  close_issue:
+    if: contains(github.event.issue.labels.*.name, 'done')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/close-issue@v1
+      - uses: actions-ecosystem/action-remove-labels@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          labels: 'done'
+
