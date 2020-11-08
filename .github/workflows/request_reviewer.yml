@@ -1,0 +1,24 @@
+# Add to reviewers field if you want to review :)
+
+on:
+  issues:
+    types: [ labeled ]
+
+jobs:
+  request-reviewers:
+    name: request
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const labels = context.payload.issues.labels || []
+            if(labels.filter(x => x.name === 'Status: waiting for review').length!==0){
+              github.pulls.requestReviewers({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.payload.pull_request.number,
+                reviewers: ['alitonia']
+            })
+            }
