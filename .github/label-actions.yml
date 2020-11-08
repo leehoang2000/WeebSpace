@@ -1,0 +1,9 @@
+# https://github.com/dessant/label-actions
+
+issues:
+  actions:
+    done:
+      comment: >
+        Issue resolved. Im closing this down.
+      close: true
+
