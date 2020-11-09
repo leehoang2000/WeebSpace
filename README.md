@@ -14,7 +14,7 @@ _Comming soon._
 
 We welcome everyone to join our development.
 
-To make development and maintain easier, please follow these steps:
+To make development and maintenance easier, please follow these steps:
  * Create an issue.
  * Create a branch to address that issue, or wait for us :)
  * We will review and get back to you as soon as possible.
