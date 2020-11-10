@@ -5,7 +5,7 @@ on:
     types: [ labeled ]
 
 jobs:
-  request-reviewers:
+  complicated_label_scheme:
     name: request
     runs-on: ubuntu-latest
     steps:
@@ -13,12 +13,24 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
+            // request code reviews
             const labels = context.payload.issues.labels || []
             if(labels.filter(x => x.name === 'Status: waiting for review').length!==0){
               github.pulls.requestReviewers({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 pull_number: context.payload.pull_request.number,
-                reviewers: ['alitonia']
+                reviewers: ['alitonia', 'leehoang2000']
             })
             }
+
+            // close finished issues
+            if(labels.filter(x => x.name === 'done').length!==0){
+                          github.issues.update({
+                            owner: context.repo.owner,
+                            repo: context.repo.repo,
+                            issue_number: context.payload.issue.number,
+                            state: 'closed'
+                        })
+                        }
+

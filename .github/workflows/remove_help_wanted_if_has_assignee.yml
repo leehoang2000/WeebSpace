@@ -1,0 +1,22 @@
+on:
+  issues:
+    types: [assigned]
+
+jobs:
+  check_and_label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const assignees = context.payload.issue.assignees
+            const current_label = context.payload.issue.labels
+            if (assignees.length !== 0){
+              github.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                name: ["help wanted"]
+            })
+            }

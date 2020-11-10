@@ -1,7 +1,7 @@
 ---
 name: "\U0001F41E Bug report"
 about: Report a bug template
-labels: 'bug, help wanted'
+labels: 'bug'
 
 ---
 
@@ -15,9 +15,14 @@ labels: 'bug, help wanted'
 ### Description
 
 
+
 ### Minimal reproduction of bug
 
+
+
 ### Screenshot (optional)
+
+
 
 ### Expected behavior
 

@@ -21,6 +21,7 @@ jobs:
             `@I'll do it`,
             `@I shall do it`,
             `@I will do it`,
+            '@I summon myself to handle this issue'
             ]
 
             if ( helping_call.some( x => comment_content.includes(x))){

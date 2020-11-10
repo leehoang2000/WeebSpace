@@ -1,7 +1,8 @@
 ---
 name: "\U0001F680 Feature request"
 about: Suggest a new feature
-labels: 'enhancement, help wanted'
+labels: 'enhancement'
+
 
 ---
 
@@ -14,12 +15,20 @@ labels: 'enhancement, help wanted'
 
 ### Description:
 
+
+
+
 ### Why this feature?
 
 <!-- Describe use case of this feature -->
 
 
+
+
 ### How to implement:
 
 <!-- Describe your solution(if possible) -->
+
+
+
 
