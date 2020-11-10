@@ -12,7 +12,11 @@ jobs:
           script: |
             const assignees = context.payload.issue.assignees
             const current_label = context.payload.issue.labels
-            if (assignees.length !== 0){
+            const labels = context.payload.issues.labels || []
+
+            if (assignees.length !== 0
+            && labels.filter(x => x.name === 'help wanted').length!==0
+            ){
               github.issues.removeLabel({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
