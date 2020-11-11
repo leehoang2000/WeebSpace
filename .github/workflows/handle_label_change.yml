@@ -13,6 +13,11 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
+
+            const review_list = [
+            'alitonia',
+            'leehoang2000'
+            ]
             // request code reviews
             const labels = context.payload.issues.labels || []
             if(labels.filter(x => x.name === 'Status: waiting for review').length!==0){
@@ -20,7 +25,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 pull_number: context.payload.pull_request.number,
-                reviewers: ['alitonia', 'leehoang2000']
+                reviewers: review_list
             })
             }
 
