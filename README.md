@@ -1,4 +1,4 @@
-# Spacinner
+# WeebSpace
 
 An arcade __moonty__-player game.
 
