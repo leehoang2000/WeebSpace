@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/ReturnToMainMenuBtn.tscn" type="PackedScene" id=1]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 512, 256 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -197.223
+margin_top = -146.236
+margin_right = 176.777
+margin_bottom = -1.23628
+text = "This IS Option"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReturnToMainMenuBtn" parent="." instance=ExtResource( 1 )]
+margin_left = -130.054
+margin_top = 5.87337
+margin_right = 115.946
+margin_bottom = 45.8734

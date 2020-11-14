@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/ReturnToMainMenuBtnController.gd" type="Script" id=1]
+
+[node name="ReturnToMainMenuBtn" type="MarginContainer"]
+margin_left = 381.322
+margin_top = 251.761
+margin_right = 627.322
+margin_bottom = 291.761
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 246.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 13.0
+margin_right = 246.0
+margin_bottom = 27.0
+text = "Return to main menu"
+align = 1
