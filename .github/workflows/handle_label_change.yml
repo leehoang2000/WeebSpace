@@ -10,7 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: request reviewer if match
-        if: |
-          contains( github.event.pull_request.labels.*.name, 'Status: waiting for review')
+        if: "contains(github.event.pull_request.labels.*.name, 'Status: waiting for review')"
         run: |
           echo 'Working as intended'
+
+      - name: end
+        run: |
+          echo hello
