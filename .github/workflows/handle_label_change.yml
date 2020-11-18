@@ -20,7 +20,7 @@ jobs:
             ]
             // request code reviews
             const labels = context.payload.issues.labels || []
-            if(labels.filter(x => x.name === 'Status: waiting for review').length!==0){
+            if(labels && labels.filter(x => x.name === 'Status: waiting for review').length!==0){
               github.pulls.requestReviewers({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -30,7 +30,7 @@ jobs:
             }
 
             // close finished issues
-            if(labels.filter(x => x.name === 'done').length!==0){
+            if(labels && labels.filter(x => x.name === 'done').length!==0){
                           github.issues.update({
                             owner: context.repo.owner,
                             repo: context.repo.repo,
