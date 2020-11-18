@@ -1,26 +1,41 @@
 on:
   issues:
-    types: [assigned]
+    types: [ assigned ]
 
 jobs:
   check_and_label:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            const assignees = context.payload.issue.assignees
-            const current_label = context.payload.issue.labels
-            const labels = context.payload.issues.labels || []
+      - name: remove unnecessary label new
+        if: |
+          contains(github.event.issue.labels.*.name, 'new')
+        run: |
+          curl \
+            -X DELETE \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number}}/labels/new
 
-            if (assignees.length !== 0
-            && labels.filter(x => x.name === 'help wanted').length!==0
-            ){
-              github.issues.removeLabel({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.payload.issue.number,
-                name: ["help wanted"]
-            })
-            }
+      - name: remove unnecessary label help wanted
+        if: |
+          contains(github.event.issue.labels.*.name, 'help wanted')
+        run: |
+          curl \
+            -X DELETE \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number
+          }}/labels/help+wanted
+
+      - name: remove unnecessary label wontfix
+        if: |
+          contains(github.event.issue.labels.*.name, 'wontfix')
+        run: |
+          curl \
+            -X DELETE \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number
+          }}/labels/wontfix
+
+
