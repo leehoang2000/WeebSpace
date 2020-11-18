@@ -9,33 +9,32 @@ jobs:
     name: request
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
+      - name: request reviewer if match
+        if: ${{ contains( github.event.pull_request.labels.*.name, 'Status: waiting for review')}}
+        run: |
+          echo 'Working as intended'
 
-            const review_list = [
-            'alitonia',
-            'leehoang2000'
-            ]
-            // request code reviews
-            const labels = context.payload.issues.labels || []
-            if(labels && labels.filter(x => x.name === 'Status: waiting for review').length!==0){
-              github.pulls.requestReviewers({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: context.payload.pull_request.number,
-                reviewers: review_list
-            })
-            }
-
-            // close finished issues
-            if(labels && labels.filter(x => x.name === 'done').length!==0){
-                          github.issues.update({
-                            owner: context.repo.owner,
-                            repo: context.repo.repo,
-                            issue_number: context.payload.issue.number,
-                            state: 'closed'
-                        })
-                        }
-
+#          const review_list = [
+#          'alitonia',
+#          'leehoang2000'
+#          ]
+#          // request code reviews
+#          const labels = context.payload.issues.labels || []
+#          if(labels && labels.filter(x => x.name === 'Status: waiting for review').length!==0){
+#            github.pulls.requestReviewers({
+#              owner: context.repo.owner,
+#              repo: context.repo.repo,
+#              pull_number: context.payload.pull_request.number,
+#              reviewers: review_list
+#          })
+#          }
+#
+#          // close finished issues
+#          if(labels && labels.filter(x => x.name === 'done').length!==0){
+#                        github.issues.update({
+#                          owner: context.repo.owner,
+#                          repo: context.repo.repo,
+#                          issue_number: context.payload.issue.number,
+#                          state: 'closed'
+#                      })
+#                      }
