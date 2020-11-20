@@ -17,6 +17,7 @@ jobs:
           || contains(github.event.issue.labels.*.name, 'Status: scheduling')
           || contains(github.event.issue.labels.*.name, 'Status: in progress')
           || contains(github.event.issue.labels.*.name, 'Status: done')
+          || contains(github.event.issue.labels.*.name, 'Status: wontfix')
           )
         run: |
           curl \
@@ -37,5 +38,3 @@ jobs:
             https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number
           }}/requested_reviewers \
             -d '{"reviewers":["alitonia", "leehoang2000"]}'
-
-

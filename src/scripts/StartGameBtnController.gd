@@ -10,7 +10,7 @@ func _ready():
 	self.connect("pressed",self,"_button_pressed")
 
 func _button_pressed():
-	SceneControlTool.ChangeScene("res://scenes//Scene1.tscn",0)
+	SceneControlTool.ChangeScene("res://scenes//Playground.tscn",0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
