@@ -6,4 +6,7 @@ issues:
       comment: >
         Issue resolved. Im closing this down.
       close: true
-
+    duplicate:
+      comment: >
+        Issue is marked as __duplicate__.
+      close: true
