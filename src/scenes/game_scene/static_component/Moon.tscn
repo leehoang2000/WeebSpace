@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 58.937, 36.974 )
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.552941, 0.0588235, 0.384314, 1, 0.337255, 0.101961, 0.807843, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[node name="Moon" type="StaticBody2D"]
+
+[node name="MoonRoundCollision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="MoonSprite" type="Sprite" parent="."]
+scale = Vector2( 0.0565933, 69.477 )
+texture = SubResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -17.9797
+margin_top = -13.4848
+margin_right = 26.0203
+margin_bottom = 17.5152
+text = "Moon
+"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
