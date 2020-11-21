@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/RocketMoveWithKeyboard.gd" type="Script" id=1]
+[ext_resource path="res://scripts/RocketAutoMovementController.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 36.9438
@@ -34,3 +34,9 @@ text = "Rocket"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RocketHead" type="Node2D" parent="Rocket"]
+position = Vector2( 1, -26.756 )
+
+[node name="RocketRear" type="Node2D" parent="Rocket"]
+position = Vector2( 1, 26.362 )

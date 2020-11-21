@@ -7,13 +7,13 @@
 [node name="Root" type="Node2D"]
 
 [node name="Moon1" parent="." instance=ExtResource( 2 )]
-position = Vector2( -292.601, -94.3874 )
+position = Vector2( -193.897, 156.535 )
 
 [node name="Rocket" parent="." instance=ExtResource( 1 )]
-position = Vector2( 96.4982, -10.3365 )
+position = Vector2( 23.5638, 38.0255 )
 
 [node name="Moon2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 371.766, 132.888 )
+position = Vector2( 345.604, 162.618 )
 
 [node name="ReturnToMainMenuBtn" parent="." instance=ExtResource( 3 )]
 margin_left = 883.841

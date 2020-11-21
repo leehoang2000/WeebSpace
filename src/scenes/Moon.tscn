@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[sub_resource type="RectangleShape2D" id=4]
+[ext_resource path="res://scripts/MoonBtn.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 58.937, 36.974 )
 
 [sub_resource type="Gradient" id=2]
@@ -14,23 +16,42 @@ gradient = SubResource( 2 )
 [node name="Moon" type="StaticBody2D" parent="."]
 position = Vector2( 457.845, 117.731 )
 
+[node name="Button" type="Button" parent="Moon"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -85.0135
+margin_top = -66.8578
+margin_right = 85.9865
+margin_bottom = 63.1422
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MoonRoundCollision" type="CollisionShape2D" parent="Moon"]
-position = Vector2( -11.317, 121.307 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="MoonSprite" type="Sprite" parent="Moon"]
-position = Vector2( -10.667, 121.403 )
 scale = Vector2( 0.0565933, 69.477 )
 texture = SubResource( 3 )
 
-[node name="Label" type="Label" parent="Moon"]
-margin_left = -29.708
-margin_top = 114.537
-margin_right = 10.292
-margin_bottom = 145.537
+[node name="MoonLabel" type="Label" parent="Moon"]
+margin_left = -21.7254
+margin_top = -6.74239
+margin_right = 22.2746
+margin_bottom = 24.2576
 text = "Moon
 "
 uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StateLabel" type="Label" parent="Moon"]
+margin_left = -21.9203
+margin_top = 12.0208
+margin_right = 18.0797
+margin_bottom = 26.0208
 __meta__ = {
 "_edit_use_anchors_": false
 }

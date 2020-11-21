@@ -22,6 +22,8 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneControlTool="*res://scripts/SceneControlTool.gd"
+EventBus="*res://scripts/EventBus.gd"
+RocketStates="*res://scripts/RocketStates.gd"
 
 [input]
 
