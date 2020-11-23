@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/Coin.gd" type="Script" id=2]
+[ext_resource path="res://scenes/game_scene/static_component/Coin/Coin.gd" type="Script" id=2]
+
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.831373, 0.894118, 0.0627451, 1, 0.862745, 0.882353, 0.231373, 1 )

@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/EnemyRocket.gd" type="Script" id=1]
+[ext_resource path="res://scenes/game_scene/moving_component/Enemy/EnemyRocket.gd" type="Script" id=1]
+
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.878431, 0.521569, 0.0627451, 1, 0.843137, 0.713726, 0.113725, 1 )
