@@ -2,7 +2,6 @@
 
 [ext_resource path="res://scenes/game_scene/moving_component/Player/RocketAutoMovementController.gd" type="Script" id=1]
 
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 36.9438
 

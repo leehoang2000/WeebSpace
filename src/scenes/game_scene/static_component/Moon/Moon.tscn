@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/game_scene/static_component/Moon/MoonBtn.gd" type="Script" id=1]
+[ext_resource path="res://scenes/game_scene/static_component/Moon/Moon.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 58.937, 36.974 )
@@ -12,6 +13,7 @@ colors = PoolColorArray( 0.552941, 0.0588235, 0.384314, 1, 0.337255, 0.101961, 0
 gradient = SubResource( 2 )
 
 [node name="Moon" type="StaticBody2D"]
+script = ExtResource( 2 )
 
 [node name="MoonRoundCollision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
