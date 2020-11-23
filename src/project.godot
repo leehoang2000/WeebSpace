@@ -17,16 +17,13 @@ _global_script_class_icons={
 
 config/name="Game Menu"
 run/main_scene="res://scenes/navigation_scene/Menu/Menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/img/icon.png"
 
 [autoload]
 
 SceneControlTool="*res://scripts/SceneControlTool.gd"
-
-[display]
-
-window/stretch/mode="2d"
-window/stretch/aspect="keep"
+EventBus="*res://scripts/EventBus.gd"
+RocketStates="*res://scripts/RocketStates.gd"
 
 [input]
 

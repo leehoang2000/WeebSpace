@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Rocket.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game_scene/static_component/Moon/Moon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/navigation_scene/BackToMenuButton/ReturnToMainMenuBtn.tscn" type="PackedScene" id=3]
+
+[node name="Root" type="Node2D"]
+
+[node name="Moon1" parent="." instance=ExtResource( 2 )]
+position = Vector2( -193.897, 156.535 )
+
+[node name="Rocket" parent="." instance=ExtResource( 1 )]
+position = Vector2( 23.5638, 38.0255 )
+
+[node name="Moon2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 345.604, 162.618 )
+
+[node name="ReturnToMainMenuBtn" parent="." instance=ExtResource( 3 )]
+margin_left = 883.841
+margin_top = 558.022
+margin_right = 1019.84
+margin_bottom = 595.022
