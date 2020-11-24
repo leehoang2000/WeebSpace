@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/game_scene/static_component/Moon/MoonBtn.gd" type="Script" id=1]
+[ext_resource path="res://scenes/game_scene/static_component/Moon/Moon.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 58.937, 36.974 )
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.552941, 0.0588235, 0.384314, 1, 0.337255, 0.101961, 0.807843, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[node name="Moon" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="MoonRoundCollision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="MoonSprite" type="Sprite" parent="."]
+scale = Vector2( 0.0565933, 69.477 )
+texture = SubResource( 3 )
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Button" type="Button" parent="Node2D"]
+margin_left = -58.0655
+margin_top = -35.707
+margin_right = 58.9345
+margin_bottom = 36.293
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StateLabel" type="Label" parent="."]
+margin_left = -22.0248
+margin_top = -17.6867
+margin_right = 21.9752
+margin_bottom = 13.3133
+__meta__ = {
+"_edit_use_anchors_": false
+}

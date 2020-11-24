@@ -1,4 +1,4 @@
-extends Node
+extends Area2D
 
 
 # Declare member variables here. Examples:
@@ -8,13 +8,14 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.connect("pressed",self,"QuitGame")
-
-func QuitGame():
-	get_tree().quit()
-	
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Coin_body_entered(body):
+	if body.name == "PlayerRocket":
+		get_tree().queue_delete(self)

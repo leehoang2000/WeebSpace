@@ -16,12 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Game Menu"
-run/main_scene="res://scenes/Menu.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/navigation_scene/Menu/Menu.tscn"
+config/icon="res://assets/img/icon.png"
 
 [autoload]
 
 SceneControlTool="*res://scripts/SceneControlTool.gd"
+EventBus="*res://scripts/EventBus.gd"
+RocketStates="*res://scripts/RocketStates.gd"
 
 [input]
 
