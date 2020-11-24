@@ -31,5 +31,11 @@ jobs:
                             repo: context.repo.repo,
                             assignees: context.payload.comment.user.login
                           })
+              github.reactions.createForIssueComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: context.payload.comment.id,
+                content: 'rocket',
+              });
             }
 
