@@ -4,9 +4,9 @@ var tilemap
 var tree_tilemap
 
 # Spawner variables
-var player_position
+var player
 export var spawn_area : Rect2 
-export var max_spawn = 20
+export var max_spawn = -1
 export var start_spawn = 2
 var spawn_count = 0
 var spawn_scene = preload('res://scenes/game_scene/static_component/Moon/Moon.tscn')
@@ -17,7 +17,7 @@ var rng = RandomNumberGenerator.new()
 
 
 func get_spawn_area():
-	spawn_area = Rect2(player_position.position.x-spawn_max_distance, player_position.position.y-spawn_max_distance, player_position.position.x+spawn_max_distance, player_position.position.y+spawn_max_distance)
+	spawn_area = Rect2(player.position.x-spawn_max_distance, player.position.y-spawn_max_distance, spawn_max_distance*2, spawn_max_distance*2)
 
 
 func test_position(position : Vector2):
@@ -41,7 +41,7 @@ func instance_spawn():
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player_position = get_parent().find_node('PlayerRocket')
+	player = get_parent().find_node('PlayerRocket')
 	get_spawn_area()
 	
 	# Initialize random number generator
