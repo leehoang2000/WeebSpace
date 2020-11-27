@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var player
-export var speed = 150
+export var speed = 60
 var direction : Vector2
 
 
