@@ -57,6 +57,15 @@ ui_down={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="moon"
+2d_physics/layer_2="player"
+2d_physics/layer_3="small_enemy"
+2d_physics/layer_4="boss"
+2d_physics/layer_5="firepower"
+2d_physics/layer_6="consumable"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

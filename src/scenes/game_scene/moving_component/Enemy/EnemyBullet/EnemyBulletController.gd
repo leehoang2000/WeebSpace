@@ -3,28 +3,24 @@ extends KinematicBody2D
 var player
 var movement
 var direction
-var speed = 2
+var speed = 250
+var head_count = 0
 
 func _ready():
-	player = get_parent().get_parent().get_parent().get_parent().find_node('PlayerRocket')	
-	if (player):
-		direction = player.position - self.position
-		direction.normalized()
-	else: 
-		print("EnemyBulletController can't find player")
-		self.remove_and_skip()
+	player = get_tree().root.get_node('Root/PlayerRocket')
+	direction = (player.position - get_parent().position).normalized()
+
 	
 func _physics_process(delta):
-	if(direction):
-		var collision = move_and_collide(direction*speed*delta)
-		if(collision): 
-			if("PlayerRocket" in collision.collider.name):
-				get_parent().remove_child(self)
-				remove_and_skip()
+	var collision = move_and_collide(direction*speed*delta)
+	if collision != null: 
+		if "PlayerRocket" in collision.collider.name:
 			#send GameOver signals here
-			elif(!"EnemyRocket" in collision.collider.name ):
-				get_parent().remove_child(self)
-				remove_and_skip()
-	else:
-		print("EnemyBulletController can't determine direction")
-		get_parent().remove_child(self)
+			get_parent().remove_child(self)
+		elif "EnemyRocket" in collision.collider.name:
+			get_tree().queue_delete(collision.collider)
+		else:
+			get_parent().remove_child(self)			
+
+func _on_Timer_timeout():
+	get_tree().queue_delete(self)

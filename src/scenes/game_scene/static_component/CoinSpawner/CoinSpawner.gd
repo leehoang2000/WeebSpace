@@ -1,8 +1,11 @@
 extends "res://scripts/Spawner.gd"
 
+var player
+var rng  = RandomNumberGenerator.new()
+
+func get_position()-> Vector2:
+	return player.position + Vector2(rng.randi_range(-300, 300), rng.randi_range(-300, 300))
 
 func _ready():
-	spawn_scene = preload('res://scenes/game_scene/static_component/Coin/Coin.tscn')
-
-#func get_spawn_area():
-#	spawn_area = Rect2(player.position.x+2000, player.position.y+2000, 4000, 1200)
+	spawn_scene = load('res://scenes/game_scene/static_component/Coin/Coin.tscn')
+	player = get_tree().root.get_node("Root/PlayerRocket")

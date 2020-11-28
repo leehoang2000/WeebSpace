@@ -1,24 +1,10 @@
-extends Node2D
+extends "res://scripts/Spawner.gd"
 
-# Declare member variables here. Examples:
-# var a = 2
-var timer 
-var spawnScene
+var rng = RandomNumberGenerator.new()
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	timer = find_node("Timer")
-	if(timer):
-		timer.connect("timeout",self,"_on_Timer_timeout")
-	else:
-		print("BulletSpawner can't find it timer")
-	spawnScene = preload("res://scenes/game_scene/moving_component/Enemy/EnemyBullet/EnemyBullet.tscn")
-	
-func _on_Timer_timeout():
-	var newBullet = spawnScene.instance()
-	add_child(newBullet)
-	
+	spawn_scene = load("res://scenes/game_scene/moving_component/Enemy/EnemyBullet/EnemyBullet.tscn")
+	max_spawn = null
+	get_node("SpawnTimer").set_wait_time(rng.randf_range(3,5))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

@@ -2,7 +2,6 @@
 
 [ext_resource path="res://scenes/game_scene/static_component/Coin/Coin.gd" type="Script" id=2]
 
-
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.831373, 0.894118, 0.0627451, 1, 0.862745, 0.882353, 0.231373, 1 )
 
@@ -21,4 +20,9 @@ texture = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )
+
+[node name="BoostExpireTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 [connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
+[connection signal="timeout" from="BoostExpireTimer" to="." method="_on_BoostExpireTimer_timeout"]
