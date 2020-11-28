@@ -2,10 +2,10 @@ extends "res://scripts/Spawner.gd"
 
 var player
 var rng = RandomNumberGenerator.new()
-var spawn_range = 2000
 var lower_bound = -5000
-var upper_bound = 3000
-var initial_spawn_number = 50
+var upper_bound = 800
+var spawn_range = 4200
+var initial_spawn_number = 60
 
 func get_position()-> Vector2:
 	var player_positiion = player.position

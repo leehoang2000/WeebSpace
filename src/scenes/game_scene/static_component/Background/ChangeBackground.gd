@@ -10,7 +10,6 @@ func color_rotation():
 	var hex_color_value = '#'
 	for i in range(0,6):
 		hex_color_value += list[rng.randi_range(0, len(list)-1)]
-	print(hex_color_value)
 	return Color(hex_color_value)
 	
 func _on_DrasticChangeSceenTimer_timeout():

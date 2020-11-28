@@ -3,8 +3,8 @@
 [ext_resource path="res://scenes/game_scene/moving_component/Enemy/EnemyBullet/EnemyBulletController.gd" type="Script" id=1]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0, 0.474227, 1 )
-colors = PoolColorArray( 0.921569, 0.0784314, 0.0588235, 1, 0.623529, 0.905882, 0.572549, 1, 0.129412, 0.752941, 0.0784314, 1 )
+offsets = PoolRealArray( 0, 0.0670103, 0.912371, 1 )
+colors = PoolColorArray( 0.301961, 0.835294, 0.411765, 1, 0.701961, 0.929412, 0.666667, 1, 0.686275, 0.803922, 0.670588, 1, 0.435294, 0.862745, 0.513726, 1 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )

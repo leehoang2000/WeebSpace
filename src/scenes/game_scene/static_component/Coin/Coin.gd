@@ -9,7 +9,7 @@ func _ready():
 
 func _on_Coin_body_entered(body):
 	if body.name == "PlayerRocket":
-		booster = player.speed * 0.6
+		booster = player.speed * 0.5
 		player.speed = player.speed + booster
 		if player.coin_speed_boost_count == 0:
 			player.modulate = Color('#fecd1a')
