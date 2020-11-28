@@ -29,6 +29,11 @@ autostart = true
 
 [node name="EndingBlinkTimer" type="Timer" parent="."]
 wait_time = 0.25
+
+[node name="SpeedIncreaseTimer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
 [connection signal="timeout" from="AgingTimer" to="." method="_on_AgingTimer_timeout"]
 [connection signal="timeout" from="UpdateTargetTimer" to="." method="_on_UpdateTargetTimer_timeout"]
 [connection signal="timeout" from="EndingBlinkTimer" to="." method="_on_EndingBlinkTimer_timeout"]
+[connection signal="timeout" from="SpeedIncreaseTimer" to="." method="_on_SpeedIncreaseTimer_timeout"]

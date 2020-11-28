@@ -49,3 +49,9 @@ func _on_EndingBlinkTimer_timeout():
 		
 func sayGoodbye():
 	pass
+
+
+func _on_SpeedIncreaseTimer_timeout():
+	# After some time, even faster
+	speed = min(speed * 1.3 , player.speed - 1)
+	get_node("SpeedIncreaseTimer").wait_time *= 1.3
