@@ -24,6 +24,7 @@ config/icon="res://assets/img/icon.png"
 SceneControlTool="*res://scripts/SceneControlTool.gd"
 EventBus="*res://scripts/EventBus.gd"
 RocketStates="*res://scripts/RocketStates.gd"
+PlaygroundSceneManager="*res://scenes/game_scene/PlaygroundSceneManager.gd"
 
 [input]
 
@@ -55,6 +56,15 @@ ui_down={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="moon"
+2d_physics/layer_2="player"
+2d_physics/layer_3="small_enemy"
+2d_physics/layer_4="boss"
+2d_physics/layer_5="firepower"
+2d_physics/layer_6="consumable"
 
 [rendering]
 

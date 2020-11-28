@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-var speed = 200
+export var speed = 200
+export var coin_speed_boost_count = 0
 
 
 func _ready():

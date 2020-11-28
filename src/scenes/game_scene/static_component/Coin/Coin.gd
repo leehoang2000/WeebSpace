@@ -1,19 +1,26 @@
 extends Area2D
 
+var player
+var booster
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-func arise():
-	pass
+	player = get_tree().root.get_node("Root/PlayerRocket")
 
 
 func _on_Coin_body_entered(body):
 	if body.name == "PlayerRocket":
-		get_tree().queue_delete(self)
+		booster = player.speed * 0.5
+		player.speed = player.speed + booster
+		if player.coin_speed_boost_count == 0:
+			player.modulate = Color('#fecd1a')
+		player.coin_speed_boost_count += 1
+		self.visible = false
+		get_node("BoostExpireTimer").start()
+
+
+func _on_BoostExpireTimer_timeout():
+	player.speed = player.speed - booster
+	player.coin_speed_boost_count -= 1
+	if player.coin_speed_boost_count == 0:
+		player.modulate = Color('#fbf6f0')
+	get_tree().queue_delete(self)

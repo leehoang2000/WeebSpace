@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/game_scene/moving_component/Enemy/RocketSpawner/RocketSpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game_scene/moving_component/Enemy/RocketSpawner/CannonRocketSpawner/CannonRocketSpawner.gd" type="Script" id=2]
+
+[node name="Root" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="SpawnTimer" parent="." index="0"]
+wait_time = 10.0
