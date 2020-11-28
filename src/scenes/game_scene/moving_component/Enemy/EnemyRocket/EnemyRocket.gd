@@ -4,7 +4,6 @@ var player
 export var speed = 60
 var direction : Vector2
 
-
 func _ready():
 	player = get_tree().root.get_node("Root/PlayerRocket")
 	

@@ -24,6 +24,7 @@ config/icon="res://assets/img/icon.png"
 SceneControlTool="*res://scripts/SceneControlTool.gd"
 EventBus="*res://scripts/EventBus.gd"
 RocketStates="*res://scripts/RocketStates.gd"
+PlaygroundSceneManager="*res://scenes/game_scene/PlaygroundSceneManager.gd"
 
 [input]
 

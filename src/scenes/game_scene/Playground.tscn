@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/game_scene/static_component/MoonSpawner/MoonSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game_scene/static_component/Moon/Moon.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/game_scene/AttachCameraToPlayer.gd" type="Script" id=6]
 [ext_resource path="res://scenes/game_scene/moving_component/Enemy/RocketSpawner/RocketSpawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/game_scene/static_component/CoinSpawner/CoinSpawner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/game_scene/PlaygroundSceneManager.gd" type="Script" id=10]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.037037, 0.130363, 0.234323, 0.318482, 0.432343, 0.608025, 0.676568, 0.75, 0.87963, 0.981481 )
@@ -17,6 +18,7 @@ colors = PoolColorArray( 0.298039, 0.0431373, 0.0431373, 1, 0.317647, 0.0470588,
 gradient = SubResource( 1 )
 
 [node name="Root" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="Coin" parent="." instance=ExtResource( 4 )]
 position = Vector2( 331.81, 228.599 )
