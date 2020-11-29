@@ -11,6 +11,6 @@ func _physics_process(delta):
 	if collision != null:
 		var collider_name = collision.collider.name
 		if 'EnemyRocket' in collider_name:
-			get_tree().queue_delete(collision.collider)
+			collision.collider.immediate_destruction()
 		else:
 			speed = 0

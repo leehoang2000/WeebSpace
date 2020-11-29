@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/game_scene/static_component/Background/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game_scene/moving_component/Enemy/RocketSpawner/RocketQuickSpawner/RocketQuickSpawner.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/navigation_scene/BackToMenuButton/ReturnToMainMenuBtn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/game_scene/static_component/OverlayGameMenu/GameMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/game_scene/moving_component/Enemy/RocketSpawner/RocketSpawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/game_scene/moving_component/Player/PlayerRocket.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/game_scene/AttachCameraToPlayer.gd" type="Script" id=6]
 [ext_resource path="res://scenes/game_scene/moving_component/Enemy/RocketSpawner/HeadBlockingRocketSpawner/HeadBlockingRocketSpawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/game_scene/static_component/CoinSpawner/CoinSpawner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/game_scene/moving_component/Enemy/RocketSpawner/CannonRocketSpawner/CannonRocketSpawner.tscn" type="PackedScene" id=9]
@@ -16,22 +15,7 @@
 [node name="PlayerRocket" parent="." instance=ExtResource( 5 )]
 position = Vector2( 497.644, 273.865 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 508.958, 296.493 )
-current = true
-script = ExtResource( 6 )
-
-[node name="Node2D" type="Node2D" parent="Camera2D"]
-position = Vector2( -774.83, -443.571 )
-z_index = 10
-
-[node name="ReturnToMainMenuBtn" parent="Camera2D/Node2D" instance=ExtResource( 3 )]
-margin_left = 1038.7
-margin_top = 699.624
-margin_right = 1284.7
-margin_bottom = 739.624
-
-[node name="ParallaxBackground" parent="." instance=ExtResource( 1 )]
+[node name="GradientParralexBackground" parent="." instance=ExtResource( 1 )]
 
 [node name="CannonRocketSpawner" parent="." instance=ExtResource( 9 )]
 
@@ -44,3 +28,6 @@ margin_bottom = 739.624
 [node name="CoinSpawner" parent="." instance=ExtResource( 8 )]
 
 [node name="MoonSpawner" parent="." instance=ExtResource( 10 )]
+
+[node name="OverlayGameMenu" parent="." instance=ExtResource( 3 )]
+position = Vector2( 514.629, 295.996 )

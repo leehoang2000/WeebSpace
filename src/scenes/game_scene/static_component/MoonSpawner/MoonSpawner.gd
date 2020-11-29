@@ -4,7 +4,7 @@ var player
 var rng = RandomNumberGenerator.new()
 var lower_bound = -5000
 var upper_bound = 800
-var spawn_range = 4200
+var spawn_range = 4600
 var initial_spawn_number = 60
 
 func get_position()-> Vector2:

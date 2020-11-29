@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal send_signal(blob)
+var Signal_Blob = load('res://scripts/Signal/Signal_Blob.gd')
+
 var player
 export var speed = 60
 var direction : Vector2
@@ -16,7 +19,8 @@ func blink(xnode, color_palete: Array)-> Color:
 
 func _ready():
 	player = get_tree().root.get_node("Root/PlayerRocket")
-	
+	self.connect("send_signal",get_tree().root.get_node("/root/EventBus"), "_general_signal_handler")
+	emit_signal('send_signal', Signal_Blob.new(self.get_instance_id(), Signal_Blob.TYPE.ENEMY_BORN, null))
 	
 func _physics_process(delta):
 	if speed == 0:
@@ -29,7 +33,7 @@ func _physics_process(delta):
 		get_node("AgingTimer").start()
 		# Sprite dead color
 		get_node("Sprite").modulate = Color("#321f28")
-		
+		sayGoodbye()
 
 func _on_UpdateTargetTimer_timeout():
 	if player != null:
@@ -44,13 +48,18 @@ func _on_AgingTimer_timeout():
 func _on_EndingBlinkTimer_timeout():
 	blink(get_node("Sprite"), ["#321f28", "#aa3a3a"])
 	if blink_index == blink_count:
-		sayGoodbye()
-		get_tree().queue_delete(self)
+		recycle_able()
 		
 func sayGoodbye():
-	pass
+	emit_signal("send_signal", Signal_Blob.new(self.get_instance_id(), Signal_Blob.TYPE.ENEMY_DEAD, null))
 
-
+func recycle_able():
+	emit_signal("send_signal", Signal_Blob.new(self.get_instance_id(), Signal_Blob.TYPE.ENEMY_RECYCLE, null))
+	
+func immediate_destruction():
+	sayGoodbye()
+	recycle_able()
+	
 func _on_SpeedIncreaseTimer_timeout():
 	# After some time, even faster
 	speed = min(speed * 1.3 , player.speed - 1)

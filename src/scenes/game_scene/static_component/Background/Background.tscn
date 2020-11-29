@@ -27,6 +27,6 @@ texture = SubResource( 2 )
 centered = false
 
 [node name="DrasticChangeSceenTimer" type="Timer" parent="ParallaxLayer/Node2D"]
-wait_time = 20.0
+wait_time = 30.0
 autostart = true
 [connection signal="timeout" from="ParallaxLayer/Node2D/DrasticChangeSceenTimer" to="ParallaxLayer/Node2D" method="_on_DrasticChangeSceenTimer_timeout"]

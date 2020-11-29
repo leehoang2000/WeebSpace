@@ -17,7 +17,7 @@ func plug_attribute(xnode):
 		
 	if mutation_chance < 0.01:
 		if xnode.speed:
-			xnode.speed = xnode.speed * 2
+			xnode.speed = xnode.speed * 1.2
 		xnode.apply_scale(Vector2(0.3, 0.3))
 		xnode.modulate = Color('#ea2c62')
 	return xnode

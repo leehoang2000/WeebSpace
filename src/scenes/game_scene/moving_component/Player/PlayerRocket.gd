@@ -3,10 +3,13 @@ extends KinematicBody2D
 export var speed = 200
 export var coin_speed_boost_count = 0
 
+signal send_signal(blob)
+var Signal_Blob = load('res://scripts/Signal/Signal_Blob.gd')
+
 
 func _ready():
-	pass 
-	
+	self.connect('send_signal', get_tree().root.get_node("/root/EventBus"), '_general_signal_handler')
+
 
 func _physics_process(delta):
 	# Get player input
@@ -23,4 +26,9 @@ func _physics_process(delta):
 	# Prevent rotation when stop
 	if movement.x != 0 or movement.y != 0 :
 		rotation = direction.angle() + PI/2
-	move_and_collide(movement)
+	var collision = move_and_collide(movement)
+	if collision != null:
+		emit_signal('send_signal',  Signal_Blob.new(self.get_instance_id(), Signal_Blob.TYPE.PLAYER_DEAD, null))
+
+func _handle_Game_End(blob):
+	speed = 0

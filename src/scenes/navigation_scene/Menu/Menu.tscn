@@ -1,18 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/navigation_scene/Menu/QuitGameBtnController.gd" type="Script" id=1]
 [ext_resource path="res://scenes/navigation_scene/Menu/OptionBtnController.gd" type="Script" id=2]
 [ext_resource path="res://scenes/navigation_scene/Menu/StartGameBtnController.gd" type="Script" id=3]
 [ext_resource path="res://assets/universe-background.jpg" type="Texture" id=4]
 [ext_resource path="res://assets/Title.png" type="Texture" id=5]
+[ext_resource path="res://scenes/navigation_scene/Menu/MenuStart.gd" type="Script" id=6]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="BackGround" type="TextureRect" parent="."]
-margin_left = -0.50269
-margin_top = 8.84821
-margin_right = 1018.5
-margin_bottom = 601.848
+margin_left = -8.0
+margin_top = -7.0
+margin_right = 1031.0
+margin_bottom = 612.0
 texture = ExtResource( 4 )
 expand = true
 __meta__ = {

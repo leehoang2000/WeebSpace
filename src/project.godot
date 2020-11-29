@@ -22,9 +22,13 @@ config/icon="res://assets/img/icon.png"
 [autoload]
 
 SceneControlTool="*res://scripts/SceneControlTool.gd"
-EventBus="*res://scripts/EventBus.gd"
+EventBus="*res://scripts/Signal/EventBus.gd"
 RocketStates="*res://scripts/RocketStates.gd"
 PlaygroundSceneManager="*res://scenes/game_scene/PlaygroundSceneManager.gd"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 

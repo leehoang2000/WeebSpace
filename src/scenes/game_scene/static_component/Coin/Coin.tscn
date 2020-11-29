@@ -22,7 +22,7 @@ texture = SubResource( 2 )
 shape = SubResource( 3 )
 
 [node name="BoostExpireTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 [connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
 [connection signal="timeout" from="BoostExpireTimer" to="." method="_on_BoostExpireTimer_timeout"]

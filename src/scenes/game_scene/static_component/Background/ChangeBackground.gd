@@ -3,7 +3,7 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	pass 
+	get_node("Sprite").modulate = color_rotation() 
 
 func color_rotation():
 	var list = '0123456789abcdef'
@@ -14,4 +14,4 @@ func color_rotation():
 	
 func _on_DrasticChangeSceenTimer_timeout():
 	get_node("Sprite").modulate = color_rotation()
-	get_node("DrasticChangeSceenTimer").wait_time = rng.randf_range(10, 20)
+	get_node("DrasticChangeSceenTimer").wait_time = rng.randf_range(get_node("DrasticChangeSceenTimer").wait_time, min(get_node("DrasticChangeSceenTimer").wait_time*1.5, 180))
