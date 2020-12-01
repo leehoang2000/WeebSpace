@@ -7,4 +7,4 @@
 script = ExtResource( 2 )
 
 [node name="SpawnTimer" parent="." index="0"]
-wait_time = 15.0
+wait_time = 12.0

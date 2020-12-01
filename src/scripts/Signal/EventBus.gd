@@ -41,6 +41,9 @@ func _general_signal_handler(blob):
 			pass
 			#print('something died')
 		Signal_Blob.TYPE.GAME_MENU:
+			current_score = 0
+			total_enemy_count = 0
+			emit_signal('score_change', str(current_score)+ '/' + str(total_enemy_count))
 			game_status = Signal_Blob.TYPE.GAME_MENU
 			
 		Signal_Blob.TYPE.GAME_RUNNING:
