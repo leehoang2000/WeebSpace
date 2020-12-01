@@ -38,3 +38,15 @@ jobs:
             https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number
           }}/requested_reviewers \
             -d '{"reviewers":["alitonia", "leehoang2000"]}'
+
+      - name: remove wontfix if move to backlog
+        if: |
+          contains(github.event.issue.labels.*.name, 'wontfix')
+          && (
+          contains(github.event.issue.labels.*.name, 'Status: maybe later')
+        run: |
+          curl \
+            -X DELETE \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels/wontfix
