@@ -1,6 +1,6 @@
 # WeebSpace
 
-An arcade __moonty__-player game.
+An arcade game.
 
 ## Introduction
 
