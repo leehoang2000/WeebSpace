@@ -4,11 +4,11 @@ An arcade game.
 
 ## Introduction
 
-_Currently in development ..._
+A game about staying alive against enemy's ships and collect speed-booster pickups.
 
 ## Installation
 
-_Comming soon._
+Just extract the .rar file and run the .exe file!
 
 ## How to contribute
 
